@@ -6,6 +6,7 @@ from django.contrib.auth.models import (
 )
 from django.utils.translation import gettext_lazy as _
 from django.dispatch import receiver
+from django.db.models.signals import post_save  
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):

@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
-
+# getting user model object
+User = get_user_model()
 
 class Post(models.Model):
-    # author = models.ForeignKey(User, models.CASCADE)
-    # image = models.ImageField(null=True, blank=True)
+    author = models.ForeignKey(User, models.CASCADE, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     status = models.BooleanField()
