@@ -9,4 +9,5 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - name-value
+      - SECRET_KEY=value
+      - DEBUG=True
