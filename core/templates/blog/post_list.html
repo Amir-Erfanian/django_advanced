@@ -5,8 +5,14 @@
     <title>Document</title>
 </head>
 <body>
+    <ul>
     {% for post in posts %}
-        {{post.title}}
+
+<li><a href={% url "blog:post-detail" pk=post.id %}><h1>{{post.title}}</h1></a>
+<small>{{post.author}}</small>
+<h3>{{post.content}}</h3>
+</li>
     {% endfor %}
+</ul>
 </body>
 </html>
